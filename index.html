@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- صفحة إدخال كلمة المرور -->
+    <div id="passwordPage" class="page active">
+        <div class="password-container">
+            <div class="password-box">
+                <h1>أدخل كلمة المرور</h1>
+                <p class="subtitle"></p>
+                <input 
+                    type="password" 
+                    id="passwordInput" 
+                    placeholder="أدخل كلمة المرور"
+                    class="password-input"
+                >
+                <button onclick="checkPassword()" class="btn-submit">دخول</button>
+                <p id="errorMsg" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة الرسالة الرومانسية -->
+    <div id="messagePage" class="page">
+        <div class="message-container">
+            <div class="message-box">
+                <p class="message-text">
+                    برغم إني زعلان منك جامد، وإنك عملتِ حاجات كتير وجعتني ومكنتش متوقعها منك بس لسه جوايا حب كبير ليك ولسه باقي على اللي بينا. 
+                    يمكن الزعل يروح مع الوقت لكن إحساسي بيكي لسه ثابت ولسه نفسي نحافظ على علاقتنا ونرجعها زي الأول واحسن لأنك بالنسبالي مش أي حد.
+                </p>
+            </div>
+            <div class="navigation-buttons">
+                <button onclick="previousPage()" class="btn-nav">← السابق</button>
+                <button onclick="nextPage()" class="btn-nav">التالي →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة الفيديو -->
+    <div id="videoPage" class="page">
+        <div class="video-container">
+            <h2>فيديو خاص لك</h2>
+            <div class="video-wrapper">
+                <iframe 
+    width="100%" 
+    height="400" 
+    src="https://www.youtube.com/embed/guCwdHngTmM" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+
+            </div>
+            <div class="navigation-buttons">
+                <button onclick="previousPage()" class="btn-nav">← السابق</button>
+                <button onclick="nextPage()" class="btn-nav">التالي →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة معرض الصور -->
+    <div id="galleryPage" class="page">
+        <div class="gallery-container">
+            <h2>ذكرياتنا الجميلة</h2>
+            <div class="gallery-wrapper">
+                <div class="gallery-image-container">
+                    <img id="galleryImage" src="" alt="صورة من الذكريات" class="gallery-image">
+                </div>
+                <p id="galleryCaption" class="gallery-caption"></p>
+            </div>
+            <div class="gallery-counter">
+                <span id="currentImage">1</span> / <span id="totalImages">9</span>
+            </div>
+            <div class="navigation-buttons">
+                <button onclick="previousImage()" class="btn-nav">← السابق</button>
+                <button onclick="nextImage()" class="btn-nav">التالي →</button>
+            </div>
+            <div class="navigation-buttons" style="margin-top: 20px;">
+                <button onclick="previousPage()" class="btn-nav">← الصفحة السابقة</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

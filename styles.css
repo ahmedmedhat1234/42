@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+/* الصفحات */
+.page {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* صفحة كلمة المرور */
+.password-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.password-box {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(236, 64, 122, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.password-box h1 {
+    color: #ec407a;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.password-box .subtitle {
+    color: #ad1457;
+    font-size: 14px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.password-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #f8bbd0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+    text-align: center;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: #ec407a;
+    box-shadow: 0 0 10px rgba(236, 64, 122, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #ec407a 0%, #c2185b 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(236, 64, 122, 0.3);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* صفحة الرسالة */
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.message-box {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(236, 64, 122, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.message-text {
+    color: #ad1457;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* صفحة الفيديو */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.video-container h2 {
+    color: #ec407a;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(236, 64, 122, 0.2);
+    margin-bottom: 30px;
+}
+
+.video-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* صفحة معرض الصور */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.gallery-container h2 {
+    color: #ec407a;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.gallery-wrapper {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(236, 64, 122, 0.2);
+    margin-bottom: 20px;
+}
+
+.gallery-image-container {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #f8bbd0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    color: #ad1457;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.gallery-counter {
+    text-align: center;
+    color: #ec407a;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* أزرار التنقل */
+.navigation-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    flex-wrap: wrap;
+}
+
+.btn-nav {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ec407a 0%, #c2185b 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Cairo', sans-serif;
+    flex: 1;
+    min-width: 150px;
+}
+
+.btn-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(236, 64, 122, 0.3);
+}
+
+.btn-nav:active {
+    transform: translateY(0);
+}
+
+/* تصميم متناسب مع الموبايل */
+@media (max-width: 768px) {
+    .password-box {
+        padding: 30px 20px;
+    }
+
+    .password-box h1 {
+        font-size: 24px;
+    }
+
+    .message-box {
+        padding: 30px 20px;
+    }
+
+    .message-text {
+        font-size: 16px;
+    }
+
+    .video-container h2,
+    .gallery-container h2 {
+        font-size: 20px;
+    }
+
+    .btn-nav {
+        min-width: 120px;
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .gallery-image-container {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .password-box {
+        padding: 25px 15px;
+        border-radius: 15px;
+    }
+
+    .password-box h1 {
+        font-size: 20px;
+    }
+
+    .password-input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .message-box {
+        padding: 25px 15px;
+        border-radius: 15px;
+    }
+
+    .message-text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .video-wrapper {
+        border-radius: 15px;
+    }
+
+    .gallery-wrapper {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .gallery-image-container {
+        min-height: 200px;
+        border-radius: 10px;
+    }
+
+    .gallery-caption {
+        font-size: 14px;
+    }
+
+    .btn-nav {
+        min-width: 100px;
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+    .navigation-buttons {
+        gap: 10px;
+    }
+}
